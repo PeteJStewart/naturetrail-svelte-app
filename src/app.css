@@ -1,2 +1,8 @@
 @import 'tailwindcss';
-@plugin '@tailwindcss/typography';
+@plugin 'daisyui';
+
+@theme {
+	--color-lightgreen: #668745;
+	--color-darkgreen: #3d693c;
+	--color-cream: #faf6e6;
+}
