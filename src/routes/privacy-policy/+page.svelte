@@ -1,17 +1,30 @@
 <script lang="ts">
 	import PolicyCard from '$lib/components/PolicyCard.svelte';
 	import PolicySection from '$lib/components/PolicySection.svelte';
+
 	const year = new Date().getFullYear();
 
-	// OPTIONAL (recommended): set this to EXACTLY the developer name shown on Google Play
-	// const developerName = 'YOUR_PLAY_STORE_DEVELOPER_NAME';
+	/**
+	 * IMPORTANT:
+	 * This MUST match your Google Play developer name (legal entity) exactly as shown on the store listing.
+	 * If Google Play shows "Tinkr Ltd" (or similar), change it here to match character-for-character.
+	 */
+	const developerLegalEntity = 'Tinkr';
+
+	/**
+	 * List the currently published app names covered by this policy.
+	 * Add new app names here as you publish them.
+	 */
+	const coveredApps = ['Nant Gwrtheyrn', 'NatureTrail'];
+
+	const coveredAppsText = coveredApps.join(', ');
 </script>
 
 <svelte:head>
-	<title>Privacy Policy — NatureTrail Apps (including Nant Gwrtheyrn)</title>
+	<title>Privacy Policy — NatureTrail Apps (by {developerLegalEntity})</title>
 	<meta
 		name="description"
-		content="This policy covers the NatureTrail family of apps (including Nant Gwrtheyrn). We don’t collect personal data; technical data is used only for error reporting and internal feature testing."
+		content={`Privacy Policy for the NatureTrail family of apps published by ${developerLegalEntity} (including ${coveredAppsText}). We don’t collect personal data; limited technical data is used only for error reporting and internal feature testing.`}
 	/>
 	<meta name="robots" content="noindex,follow" />
 </svelte:head>
@@ -20,22 +33,18 @@
 	<div class="max-w-6xl px-4 py-16">
 		<PolicyCard>
 			<header>
-				<h1>Privacy Policy — NatureTrail Apps (including Nant Gwrtheyrn)</h1>
+				<h1>Privacy Policy — NatureTrail Apps (by {developerLegalEntity})</h1>
 				<div class="sub">Effective date: November 2025</div>
 
-				<!-- NEW: explicit coverage statement to satisfy app-name matching in stores -->
 				<div class="sub">
-					<strong>Apps covered by this policy:</strong> This Privacy Policy applies to the NatureTrail
-					family of apps, including <strong>Nant Gwrtheyrn</strong>, NatureTrail, and other
-					NatureTrail-branded trail apps we publish from time to time.
+					<strong>Developer / legal entity (Google Play listing):</strong> {developerLegalEntity}
 				</div>
 
-				<!-- OPTIONAL (recommended): developer/data controller name (must match Play Store listing exactly) -->
-				<!--
 				<div class="sub">
-					<strong>Developer / Data controller:</strong> {developerName}.
+					<strong>Apps covered by this policy:</strong> This Privacy Policy applies to the NatureTrail family of
+					apps published by {developerLegalEntity}, including <strong>{coveredAppsText}</strong>, and other
+					NatureTrail-branded trail apps we publish from time to time.
 				</div>
-				-->
 			</header>
 
 			<div class="summary" role="note" aria-label="Plain-language summary">
@@ -47,10 +56,10 @@
 
 			<PolicySection id="overview" title="1. Overview">
 				<p>
-					The <em>NatureTrail family of apps</em> (including <strong>Nant Gwrtheyrn</strong>) helps you
-					explore local nature trails and learn Welsh. We value your privacy. This app does
-					<strong>not collect or store any personal information</strong>
-					about you. Your preferences (such as language choice or completed routes) are stored
+					The <em>NatureTrail family of apps</em> published by {developerLegalEntity} (including{' '}
+					<strong>{coveredAppsText}</strong>) helps you explore local nature trails and learn Welsh. We
+					value your privacy. These apps do <strong>not collect or store any personal information</strong>
+					about you. Your preferences (such as language choice or completed routes) are stored{' '}
 					<strong>locally on your device</strong> and are never transmitted to us or third parties.
 				</p>
 			</PolicySection>
@@ -99,8 +108,7 @@
 			<PolicySection id="local-storage" title="5. Local Storage">
 				<p>
 					Your settings—such as language preferences, visited points of interest, and downloaded
-					maps—are stored
-					<strong>only on your device</strong>. Removing the app deletes this data.
+					maps—are stored <strong>only on your device</strong>. Removing the app deletes this data.
 				</p>
 			</PolicySection>
 
@@ -121,21 +129,19 @@
 			<PolicySection id="rights" title="8. Your Rights">
 				<p>
 					As we do not collect personal data, there is no personal data for you to access, correct,
-					or delete. If you have any questions, contact us at <a
-						href="mailto:support@naturetrail.app">support@naturetrail.app</a
-					>.
+					or delete. If you have any questions, contact {developerLegalEntity} at{' '}
+					<a href="mailto:support@naturetrail.app">support@naturetrail.app</a>.
 				</p>
 			</PolicySection>
 
 			<PolicySection id="changes" title="9. Changes to This Policy">
 				<p>
 					We may update this policy from time to time. The latest version will always be available
-					within the app and at
-					<a href="https://naturetrail.app/privacy">naturetrail.app/privacy</a>.
+					within the app and at <a href="https://naturetrail.app/privacy">naturetrail.app/privacy</a>.
 				</p>
 			</PolicySection>
 
-			<footer>&copy; {year} NatureTrail. All rights reserved.</footer>
+			<footer>&copy; {year} {developerLegalEntity}. All rights reserved.</footer>
 		</PolicyCard>
 	</div>
 </section>
