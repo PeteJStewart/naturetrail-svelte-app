@@ -2,13 +2,16 @@
 	import PolicyCard from '$lib/components/PolicyCard.svelte';
 	import PolicySection from '$lib/components/PolicySection.svelte';
 	const year = new Date().getFullYear();
+
+	// OPTIONAL (recommended): set this to EXACTLY the developer name shown on Google Play
+	// const developerName = 'YOUR_PLAY_STORE_DEVELOPER_NAME';
 </script>
 
 <svelte:head>
-	<title>Privacy Policy — NatureTrail App</title>
+	<title>Privacy Policy — NatureTrail Apps (including Nant Gwrtheyrn)</title>
 	<meta
 		name="description"
-		content="We don’t collect personal data; technical data is used only for error reporting and internal feature testing."
+		content="This policy covers the NatureTrail family of apps (including Nant Gwrtheyrn). We don’t collect personal data; technical data is used only for error reporting and internal feature testing."
 	/>
 	<meta name="robots" content="noindex,follow" />
 </svelte:head>
@@ -17,8 +20,22 @@
 	<div class="max-w-6xl px-4 py-16">
 		<PolicyCard>
 			<header>
-				<h1>Privacy Policy — NatureTrail App</h1>
+				<h1>Privacy Policy — NatureTrail Apps (including Nant Gwrtheyrn)</h1>
 				<div class="sub">Effective date: November 2025</div>
+
+				<!-- NEW: explicit coverage statement to satisfy app-name matching in stores -->
+				<div class="sub">
+					<strong>Apps covered by this policy:</strong> This Privacy Policy applies to the NatureTrail
+					family of apps, including <strong>Nant Gwrtheyrn</strong>, NatureTrail, and other
+					NatureTrail-branded trail apps we publish from time to time.
+				</div>
+
+				<!-- OPTIONAL (recommended): developer/data controller name (must match Play Store listing exactly) -->
+				<!--
+				<div class="sub">
+					<strong>Developer / Data controller:</strong> {developerName}.
+				</div>
+				-->
 			</header>
 
 			<div class="summary" role="note" aria-label="Plain-language summary">
@@ -30,8 +47,8 @@
 
 			<PolicySection id="overview" title="1. Overview">
 				<p>
-					The <em>NatureTrail App</em> helps you explore local nature trails and learn Welsh. We
-					value your privacy. This app does
+					The <em>NatureTrail family of apps</em> (including <strong>Nant Gwrtheyrn</strong>) helps you
+					explore local nature trails and learn Welsh. We value your privacy. This app does
 					<strong>not collect or store any personal information</strong>
 					about you. Your preferences (such as language choice or completed routes) are stored
 					<strong>locally on your device</strong> and are never transmitted to us or third parties.
